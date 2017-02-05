@@ -13,6 +13,7 @@
 		F171260F1E46CD4800DBFED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F171260E1E46CD4800DBFED9 /* Assets.xcassets */; };
 		F17126121E46CD4800DBFED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17126101E46CD4800DBFED9 /* LaunchScreen.storyboard */; };
 		F171261B1E46D96400DBFED9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171261A1E46D96400DBFED9 /* Post.swift */; };
+		F1D67CEC1E478437008BD553 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D67CEB1E478437008BD553 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F17126111E46CD4800DBFED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17126131E46CD4800DBFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F171261A1E46D96400DBFED9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F1D67CEB1E478437008BD553 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				F171261A1E46D96400DBFED9 /* Post.swift */,
+				F1D67CEB1E478437008BD553 /* TableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F171261B1E46D96400DBFED9 /* Post.swift in Sources */,
+				F1D67CEC1E478437008BD553 /* TableViewCell.swift in Sources */,
 				F171260A1E46CD4800DBFED9 /* ViewController.swift in Sources */,
 				F17126081E46CD4800DBFED9 /* AppDelegate.swift in Sources */,
 			);
