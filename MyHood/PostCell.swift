@@ -16,6 +16,7 @@ class PostCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        postImg.layer.cornerRadius = postImg.frame.size.width / 2
         // Initialization code
     }
     
