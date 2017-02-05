@@ -24,14 +24,83 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-FZ-N4K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-9V-S09">
+                                        <rect key="frame" x="317" y="26" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="WfW-6P-ohs"/>
+                                            <constraint firstAttribute="height" constant="40" id="s7h-km-Sbp"/>
+                                        </constraints>
+                                        <state key="normal" image="camera"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerlogo" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-Cn-6QR">
+                                        <rect key="frame" x="119" y="6" width="137" height="62"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="137" id="3Eg-bK-NQ9"/>
+                                            <constraint firstAttribute="height" constant="62" id="iC9-y5-8ur"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.52941176470588236" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ECA-9V-S09" secondAttribute="bottom" constant="8" id="SMo-sP-Ky5"/>
+                                    <constraint firstItem="dcq-Cn-6QR" firstAttribute="centerY" secondItem="CH5-FZ-N4K" secondAttribute="centerY" id="a3z-Lb-D5W"/>
+                                    <constraint firstItem="dcq-Cn-6QR" firstAttribute="centerX" secondItem="CH5-FZ-N4K" secondAttribute="centerX" id="gVE-sE-38x"/>
                                     <constraint firstAttribute="height" constant="74" id="kEg-Jr-ONd"/>
+                                    <constraint firstAttribute="trailing" secondItem="ECA-9V-S09" secondAttribute="trailing" constant="8" id="y2I-1R-hRx"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="78V-Vy-2UL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="78V-Vy-2UL">
                                 <rect key="frame" x="16" y="94" width="343" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="4Zb-Mt-dSJ">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Zb-Mt-dSJ" id="a8m-Pf-37l">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="HoU-nI-lJN">
+                                                    <rect key="frame" x="8" y="8" width="73" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="73" id="mit-qM-1Wd"/>
+                                                        <constraint firstAttribute="width" constant="73" id="y83-ZU-IDy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Man Needs To Go!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDM-AP-oe9">
+                                                    <rect key="frame" x="89" y="8" width="246" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="fYM-wd-yzY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey this guy is way to loud im thinking of burning his house down." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="t5L-xB-aoe">
+                                                    <rect key="frame" x="89" y="37" width="246" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="MnD-Qa-7GG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t5L-xB-aoe" firstAttribute="leading" secondItem="HoU-nI-lJN" secondAttribute="trailing" constant="8" id="1Bu-CZ-1UE"/>
+                                                <constraint firstItem="HoU-nI-lJN" firstAttribute="leading" secondItem="a8m-Pf-37l" secondAttribute="leadingMargin" id="6EH-lr-C4d"/>
+                                                <constraint firstItem="zDM-AP-oe9" firstAttribute="leading" secondItem="HoU-nI-lJN" secondAttribute="trailing" constant="8" id="8pL-CT-v95"/>
+                                                <constraint firstItem="t5L-xB-aoe" firstAttribute="trailing" secondItem="a8m-Pf-37l" secondAttribute="trailingMargin" id="Xwt-sH-QNh"/>
+                                                <constraint firstItem="HoU-nI-lJN" firstAttribute="top" secondItem="a8m-Pf-37l" secondAttribute="topMargin" id="aRX-7q-9My"/>
+                                                <constraint firstItem="zDM-AP-oe9" firstAttribute="trailing" secondItem="a8m-Pf-37l" secondAttribute="trailingMargin" id="dYQ-6m-EpJ"/>
+                                                <constraint firstItem="zDM-AP-oe9" firstAttribute="top" secondItem="a8m-Pf-37l" secondAttribute="topMargin" id="qQl-Zv-NGW"/>
+                                                <constraint firstItem="HoU-nI-lJN" firstAttribute="bottom" secondItem="a8m-Pf-37l" secondAttribute="bottomMargin" id="tsV-Fw-8WN"/>
+                                                <constraint firstItem="t5L-xB-aoe" firstAttribute="top" secondItem="zDM-AP-oe9" secondAttribute="bottom" constant="8" id="xfD-4j-5bl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,7 +117,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="309.60000000000002" y="143.47826086956522"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bannerlogo" width="518" height="194"/>
+        <image name="barrel-water-bridge" width="550" height="440"/>
+        <image name="camera" width="100" height="77"/>
+    </resources>
 </document>
