@@ -11,23 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let post1 = Post(imagePath: "", title: "postOne", description: "prueba de post")
-        let post2 = Post(imagePath: "", title: "postTwo", description: "prueba de post")
-        let post3 = Post(imagePath: "", title: "postThree", description: "prueba de post")
-        
-        posts.append(post1)
-        posts.append(post2)
-        posts.append(post3)
-        
-        tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(onPostsLoaded), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,11 +24,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.instance.loadedPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = posts[indexPath.row]
+        let post = DataService.instance.loadedPosts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
             cell.configureCell(post: post)
             return cell
@@ -52,6 +41,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 89.5
+    }
+    
+    func onPostsLoaded(notif: Any) {
+        tableView.reloadData()
     }
 
 

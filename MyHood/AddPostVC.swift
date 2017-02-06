@@ -35,7 +35,8 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
     @IBAction func makePostBtnPressed(_ sender: Any) {
         if let title = titleField.text , let desc = descField.text, let img = postImg.image{
-            var post = Post(imagePath: "", title: title, description: desc)
+            let post = Post(imagePath: "", title: title, description: desc)
+            DataService.instance.addPost(post: post)
             
         }
     }

@@ -33,6 +33,7 @@ class DataService {
             }
             
         }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
         
     }
     
