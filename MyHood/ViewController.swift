@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        DataService.instance.loadPosts()
         NotificationCenter.default.addObserver(self, selector: #selector(onPostsLoaded), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
     }
     

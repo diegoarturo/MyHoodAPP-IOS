@@ -22,7 +22,7 @@ class DataService {
         //USING NSUSER DEFAULTS
         let postsData = NSKeyedArchiver.archivedData(withRootObject: _loadedPosts) //turn array into data
         UserDefaults.standard.set(postsData, forKey: KEY_POSTS) //storage mecanism, setting an object with a key
-    
+        
         
     }
     
@@ -37,18 +37,36 @@ class DataService {
         
     }
     
-    func saveImageAndCreatePath(image:UIImage) {
-        
+    func saveImageAndCreatePath(image:UIImage) -> String{
+        let imgData = UIImagePNGRepresentation(image)
+        let imgPath = "image\(NSDate.timeIntervalSinceReferenceDate).png"
+        let fullPath = documentsPathForFileName(name: imgPath)
+        do{
+            try imgData?.write(to: URL(fileURLWithPath: fullPath), options: .atomic)
+        }catch{
+            print(error)
+        }
+        return imgPath
     }
     
-    func imageForPath(path: String) {
-        
+    
+    func imageForPath(path: String) -> UIImage?{
+        let fullPath = documentsPathForFileName(name: path)
+        let image = UIImage(named: fullPath)
+        return image
     }
     
     func addPost(post:Post) {
         _loadedPosts.append(post)
         savePosts()
         loadPosts()
+    }
+    
+    //directory to load and save images
+    func documentsPathForFileName(name: String) -> String{
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) //returns array and we need the first
+        let fullPath = paths[0] as NSString
+        return fullPath.strings(byAppendingPaths: [name]).description
     }
     
 }
